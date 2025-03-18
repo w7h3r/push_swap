@@ -20,4 +20,8 @@ typedef struct s_stacks {
 	int	b_size;
 }	t_stacks;
 
+void	free_stacks(t_stacks *stack);
+void	free_imp(char **str);
+int	insert_atoi(char *str, t_stacks *stacks);
+
 #endif
