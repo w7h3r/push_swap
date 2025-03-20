@@ -17,12 +17,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-/*
- * NOOOT NOOOOOOOOT! WE HAVE A SEGMENTATION FAULT HERE!!!!!!!
- *
- */
-
-
 void	init_stacks(t_stacks *stacks, int size)
 {
 	stacks->a = malloc(sizeof(int) * size);
@@ -34,7 +28,7 @@ void	init_stacks(t_stacks *stacks, int size)
 		free (stacks->a);
 		exit (1);
 	}
-	stacks->a_size = 0;
+	stacks->a_size = size;
 	stacks->b_size = 0;
 }
 
@@ -60,7 +54,7 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 	int		i;
 
 	i = 1;
-	while (i < argc)
+	while (i < argc - 1)
 	{
 		if (ft_strchr(arg[i], ' '))
 		{
