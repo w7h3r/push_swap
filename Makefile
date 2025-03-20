@@ -3,14 +3,15 @@ CC= cc
 CFLAGS= -Wall -Wextra -Werror -g
 LIBFT= lib/libft/libft.a
 SRC= src/main.c \
-	 src/push_swap.c
+	 src/push_swap.c \
+	 src/ps_utils.c
 
 OBJ= $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(LIBFT) -o $(NAME)
+	$(CC) $(OBJ) $(CFLAGS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 	make -C lib/libft/
