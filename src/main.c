@@ -28,7 +28,7 @@ void	init_stacks(t_stacks *stacks, int size)
 		free (stacks->a);
 		exit (1);
 	}
-	stacks->a_size = size;
+	stacks->a_size = 0;
 	stacks->b_size = 0;
 }
 
@@ -67,7 +67,6 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 				free_stacks(stack);
 			stack->a_size++;
 		}
-			write(1, "A\n", 2);
 		i++;
 	}
 }
@@ -104,7 +103,7 @@ int	stack_size(char **arg)
 			stack_size++;
 		i++;
 	}
-	printf("TOTAL: %d\n", stack_size);
+	//printf("TOTAL: %d\n", stack_size);
 	return (stack_size);
 }
 
@@ -116,4 +115,5 @@ int	main(int argc, char **argv)
 		exit(1);
 	init_stacks(&stack, stack_size(argv));
 	insert_stacks(argc, argv, &stack);
+	free_stacks(&stack);
 }
