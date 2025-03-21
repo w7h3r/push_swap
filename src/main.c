@@ -103,7 +103,6 @@ int	stack_size(char **arg)
 			stack_size++;
 		i++;
 	}
-	//printf("TOTAL: %d\n", stack_size);
 	return (stack_size);
 }
 
