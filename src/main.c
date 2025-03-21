@@ -106,6 +106,35 @@ int	stack_size(char **arg)
 	return (stack_size);
 }
 
+_Bool	stack_repeat(t_stacks *stack)
+{
+	unsigned int		i;
+	unsigned int		j;
+
+	i = 0;
+	while (i < stack->a_size)
+	{
+		j = i + 1;
+		while (j < stack->a_size)
+		{
+			if (stack->a[j] == stack->a[i])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+void	is_valid_stack(t_stacks *stack)
+{
+	if (stack_repeat(stack))
+	{
+		free_stacks(stack);
+		exit (1);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stacks	stack;
@@ -114,5 +143,6 @@ int	main(int argc, char **argv)
 		exit(1);
 	init_stacks(&stack, stack_size(argv));
 	insert_stacks(argc, argv, &stack);
+	is_valid_stack(&stack);
 	free_stacks(&stack);
 }

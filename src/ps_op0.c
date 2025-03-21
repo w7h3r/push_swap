@@ -19,5 +19,4 @@ void	sa(t_stacks *stack)
 	char	temp;
 
 	temp = stack->a[0];
-
 }
