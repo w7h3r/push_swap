@@ -115,5 +115,5 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		exit(1);
 	init_stacks(&stack, stack_size(argv));
-	insert_stacks(argc, &argv[1], &stack);
+	insert_stacks(argc, argv, &stack);
 }
