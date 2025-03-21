@@ -54,11 +54,10 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 	int		i;
 
 	i = 1;
-	while (i < argc - 1)
+	while (i < argc)
 	{
 		if (ft_strchr(arg[i], ' '))
 		{
-			//write(1, "A\n", 2);
 			handle_string_arg(arg[i], stack);
 		}
 		else
@@ -68,6 +67,7 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 				free_stacks(stack);
 			stack->a_size++;
 		}
+			write(1, "A\n", 2);
 		i++;
 	}
 }
