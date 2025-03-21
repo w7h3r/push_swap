@@ -108,8 +108,8 @@ int	stack_size(char **arg)
 
 _Bool	stack_repeat(t_stacks *stack)
 {
-	unsigned int		i;
-	unsigned int		j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (i < stack->a_size)
@@ -118,7 +118,7 @@ _Bool	stack_repeat(t_stacks *stack)
 		while (j < stack->a_size)
 		{
 			if (stack->a[j] == stack->a[i])
-				return (1);
+				return (write(1, "INVALID\n", 8), 1);
 			j++;
 		}
 		i++;
@@ -126,9 +126,30 @@ _Bool	stack_repeat(t_stacks *stack)
 	return (0);
 }
 
+int	stack_sorted(t_stacks *stack)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack->a_size - 1) // 1 2 3 4
+	{
+		if (stack->a[i] > stack->a[i + 1])
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (write(1, "SORTED\n", 7), 1);
+}
+
 void	is_valid_stack(t_stacks *stack)
 {
 	if (stack_repeat(stack))
+	{
+		free_stacks(stack);
+		exit (1);
+	}
+	if (stack_sorted(stack))
 	{
 		free_stacks(stack);
 		exit (1);
