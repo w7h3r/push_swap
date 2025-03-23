@@ -6,14 +6,15 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:41:57 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/17 03:33:21 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/22 02:04:25 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct s_stacks {
+typedef struct s_stacks
+{
 	int	*a;
 	int	*b;
 	int	a_size;
@@ -22,6 +23,15 @@ typedef struct s_stacks {
 
 void	free_stacks(t_stacks *stack);
 void	free_imp(char **str);
-int	insert_atoi(char *str, t_stacks *stacks);
+int		insert_atoi(char *str, t_stacks *stacks);
+_Bool	stack_repeat(t_stacks *stack);
+int		stack_sorted(t_stacks *stack);
+void	is_valid_stack(t_stacks *stack);
+
+void	init_stacks(t_stacks *stacks, int size);
+void	handle_string_arg(char *arg, t_stacks *stack);
+void	insert_stacks(int argc, char **arg, t_stacks *stack);
+int		arg_size(char *arg);
+int		stack_size(char **arg);
 
 #endif
