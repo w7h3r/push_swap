@@ -62,4 +62,3 @@ int	insert_atoi(char *str, t_stacks *stacks)
 	}
 	return ((int)num * sign);
 }
-
