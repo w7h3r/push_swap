@@ -48,6 +48,7 @@ void	handle_string_arg(char *arg, t_stacks *stack)
 		stack->a_size++;
 		i++;
 	}
+	free_imp(split_buffer);
 }
 
 void	insert_stacks(int argc, char **arg, t_stacks *stack)
