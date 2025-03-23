@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_insert_stacks.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:53:29 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/22 02:05:24 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/23 04:21:58 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/libft/libft.h"
 #include "../inc/push_swap.h"
 #include <limits.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -55,6 +56,8 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 {
 	int		i;
 
+	int		temp;
+
 	i = 1;
 	while (i < argc)
 	{
@@ -64,9 +67,10 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 		}
 		else
 		{
-			stack->a[stack->a_size] = insert_atoi(arg[i], stack);
-			if (stack->a[stack->a_size] == -1)
-				free_stacks(stack);
+			temp = insert_atoi(arg[i], stack);
+			stack->a[stack->a_size] = temp;
+			//if (stack->a[stack->a_size] == -1)
+			//	free_stacks(stack);
 			stack->a_size++;
 		}
 		i++;
