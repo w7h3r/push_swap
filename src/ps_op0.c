@@ -6,7 +6,7 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 06:06:20 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/21 07:34:49 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/23 04:28:14 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 void	swap(int *top, int *bot)
 {
-	int	*temp;
+	int	temp;
 
-	temp = top;
-	top = bot;
-	bot = temp;
+	temp = *top;
+	*top = *bot;
+	*bot = temp;
 }
 
 void	sa(t_stacks *stack)

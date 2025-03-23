@@ -3,8 +3,11 @@ CC= cc
 CFLAGS= -Wall -Wextra -Werror -g
 LIBFT= lib/libft/libft.a
 SRC= src/main.c \
-	 src/push_swap.c \
-	 src/ps_utils.c
+	 src/ps_stack_utils.c \
+	 src/ps_utils.c \
+	 src/ps_insert_stacks.c \
+	 src/ps_op0.c \
+	 src/ps_op1.c \
 
 OBJ= $(SRC:.c=.o)
 

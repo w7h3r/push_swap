@@ -12,6 +12,7 @@
 
 #include "../lib/libft/libft.h"
 #include "../inc/push_swap.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
@@ -56,7 +57,7 @@ int	insert_atoi(char *str, t_stacks *stacks)
 	while (*str >= '0' && *str <= '9')
 	{
 		num = num * 10 + (*str - '0');
-		if (num > INT_MAX || num < INT_MIN)
+		if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
 			free_stacks(stacks);
 		str++;
 	}

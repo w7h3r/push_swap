@@ -6,24 +6,22 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:41:51 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/22 02:05:27 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/23 04:26:21 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/libft/libft.h"
 #include "../inc/push_swap.h"
 #include <limits.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-/*
+#include <stdio.h>
 void	print_stack(int *tab, int size)
 {
 	for (int i = 0; i < size; i++)
 		printf("%d\n", tab[i]);
 }
-*/
 
 int	main(int argc, char **argv)
 {
@@ -34,5 +32,7 @@ int	main(int argc, char **argv)
 	init_stacks(&stack, stack_size(argv));
 	insert_stacks(argc, argv, &stack);
 	is_valid_stack(&stack);
+	sa(&stack);
+	print_stack(stack.a, stack.a_size);
 	free_stacks(&stack);
 }
