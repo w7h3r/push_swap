@@ -6,7 +6,7 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:53:29 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/23 04:23:40 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/23 04:25:31 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 {
 	int		i;
 
-	int		temp;
-
 	i = 1;
 	while (i < argc)
 	{
@@ -67,8 +65,7 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 		}
 		else
 		{
-			temp = insert_atoi(arg[i], stack);
-			stack->a[stack->a_size] = temp;
+			stack->a[stack->a_size] = insert_atoi(arg[i], stack);
 			stack->a_size++;
 		}
 		i++;
