@@ -63,3 +63,12 @@ int	insert_atoi(char *str, t_stacks *stacks)
 	}
 	return ((int)num * sign);
 }
+
+void	swap(int *first, int *second)
+{
+	int	temp;
+
+	temp = *first;
+	*first = *second;
+	*second = temp;
+}

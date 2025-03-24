@@ -15,15 +15,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void	swap(int *top, int *bot)
-{
-	int	temp;
-
-	temp = *top;
-	*top = *bot;
-	*bot = temp;
-}
-
 void	sa(t_stacks *stack)
 {
 	swap(&stack->a[0], &stack->a[1]);

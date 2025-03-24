@@ -34,6 +34,7 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack);
 int		arg_size(char *arg);
 int		stack_size(char **arg);
 
+void	swap(int *first, int *second);
 void	sa(t_stacks *stack);
 void	sb(t_stacks *stack);
 void	ss(t_stacks *stack);
