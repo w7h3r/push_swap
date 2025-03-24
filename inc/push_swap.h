@@ -38,6 +38,9 @@ void	swap(int *first, int *second);
 void	sa(t_stacks *stack);
 void	sb(t_stacks *stack);
 void	ss(t_stacks *stack);
+void	push_to_stack(int *src, int *dst, int *src_size, int *dst_size);
+void	pa(t_stacks *stack);
+void	pb(t_stacks *stack);
 
 
 #endif
