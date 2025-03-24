@@ -15,16 +15,45 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-//stack_b'den stack.a'ya
-//a = 2 5 1 | b = ;
-//pb => a = 5 1 | b = 2 ;
+void	push_to_stack(int *src, int *dst, int *src_size, int *dst_size)
+{
+	int		i;
+
+	i = *dst_size;
+	while (i > 0)
+	{
+		dst[i] = dst[i - 1];
+		i--;
+	}
+	dst[0] = src[0];
+	i = 0;
+	while (i < *src_size - 1)
+	{
+		src[i] = src[i + 1];
+		i++;
+	}
+	(*src_size)--;
+	(*dst_size)++;
+}
 
 void	pa(t_stacks *stack)
 {
-
+	if (stack->b_size == 0)
+	{
+		free_stacks(stack);
+		exit (1);
+	}
+	push_to_stack(stack->b, stack->a, &stack->b_size, &stack->a_size);
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_stacks *stack)
 {
-
+	if (stack->a_size == 0)
+	{
+		free_stacks(stack);
+		exit (1);
+	}
+	push_to_stack(stack->a, stack->b, &stack->a_size, &stack->b_size);
+	write(1, "pb\n", 3);
 }
