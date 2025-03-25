@@ -6,7 +6,7 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 07:34:54 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/21 07:34:56 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/25 07:36:19 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ void	push_to_stack(int *src, int *dst, int *src_size, int *dst_size)
 {
 	int		i;
 
+	if (*src_size == 0)
+		return ;
 	i = *dst_size;
-	while (i >= 0)
+	while (i > 0)
 	{
 		dst[i] = dst[i - 1];
 		i--;
