@@ -6,7 +6,7 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:41:51 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/23 04:26:21 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/24 21:08:10 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ int	main(int argc, char **argv)
 	init_stacks(&stack, stack_size(argv));
 	insert_stacks(argc, argv, &stack);
 	is_valid_stack(&stack);
-//	sa(&stack);
-	pb(&stack);
-	pb(&stack);
-	print_stack(stack.a, stack.a_size, "A");
-	print_stack(stack.b, stack.b_size, "B");
+	//print_stack(stack.a, stack.a_size, "A");
+	//print_stack(stack.b, stack.b_size, "B");
 	free_stacks(&stack);
 }
