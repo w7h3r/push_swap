@@ -6,8 +6,11 @@ SRC= src/main.c \
 	 src/ps_stack_utils.c \
 	 src/ps_utils.c \
 	 src/ps_insert_stacks.c \
+	 src/index_stack.c \
 	 src/ps_op0.c \
 	 src/ps_op1.c \
+	 src/ps_op2.c \
+	 src/ps_op3.c \
 
 OBJ= $(SRC:.c=.o)
 

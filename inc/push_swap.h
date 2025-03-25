@@ -6,7 +6,7 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:41:57 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/25 07:26:47 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/25 09:00:55 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void	rra(t_stacks *stack);
 void	rrb(t_stacks *stack);
 void	rrr(t_stacks *stack);
 
+void	index_stack(t_stacks *stack);
 
 #endif
