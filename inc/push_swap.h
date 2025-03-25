@@ -6,7 +6,7 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:41:57 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/22 02:04:25 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/03/25 07:26:47 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ void	ss(t_stacks *stack);
 void	push_to_stack(int *src, int *dst, int *src_size, int *dst_size);
 void	pa(t_stacks *stack);
 void	pb(t_stacks *stack);
+void	rotate_stack(int *stack, int *size);
+void	ra(t_stacks *stack);
+void	rb(t_stacks *stack);
+void	rr(t_stacks *stack);
+void	rev_rotate_stack(int *stack, int *size);
+void	rra(t_stacks *stack);
+void	rrb(t_stacks *stack);
+void	rrr(t_stacks *stack);
 
 
 #endif
