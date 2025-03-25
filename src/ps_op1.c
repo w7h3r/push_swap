@@ -20,7 +20,7 @@ void	push_to_stack(int *src, int *dst, int *src_size, int *dst_size)
 	int		i;
 
 	i = *dst_size;
-	while (i > 0)
+	while (i >= 0)
 	{
 		dst[i] = dst[i - 1];
 		i--;
