@@ -65,7 +65,7 @@ void	index_stack(t_stacks *stack)
 	}
 	sort_arr(indexed_stack, stack->a_size);
 	index_arr(indexed_stack, stack->a_size);
-	for (int i = 0; i < 4; i++)
-		printf("%d\n", indexed_stack[i]);
+//	for (int i = 0; i < 4; i++)
+//		printf("%d\n", indexed_stack[i]);
 	free (indexed_stack);
 }
