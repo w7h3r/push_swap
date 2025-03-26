@@ -18,20 +18,23 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFT) -o $(NAME)
+	@echo "\033[32m✓ [ PUSH_SWAP ] built successfully\033[0m"
 
 $(LIBFT):
 	make -C lib/libft/
 	make -C lib/ft_printf/
 
 clean:
-	rm -rf $(OBJ)
-	make -C lib/libft/ clean
-	make -C lib/ft_printf/ clean
+	@rm -rf $(OBJ)
+	@echo "\033[31m✓ [ PUSH_SWAP ] objects removed\033[0m"
+	@make -C lib/libft/ clean
+	@make -C lib/ft_printf/ clean
 
 fclean: clean
-	rm -rf $(NAME)
-	make -C lib/libft/ fclean
-	make -C lib/ft_printf/ fclean
+	@rm -rf $(NAME)
+	@echo "\033[31m✓ [ PUSH_SWAP ] removed\033[0m --> $(NAME)"
+	@rm -rf $(LIBFT)
+	@rm -rf $(PRINTF)
 
 re: fclean all
 

@@ -20,15 +20,15 @@ obj/%.o: src/%.c
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
-	@echo "\033[32m✓ built successfully\033[0m"
+	@echo "\033[32m✓ [ FT_PRINTF ] built successfully\033[0m"
 
 clean:
 	@$(RM) $(OBJ)
-	@echo "\033[31m✓ objects removed\033[0m"
+	@echo "\033[31m✓ [ FT_PRINTF ] objects removed\033[0m"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\033[31m✓ removed\033[0m --> $(NAME)"
+	@echo "\033[31m✓ [ FT_PRINTF ] removed\033[0m --> $(NAME)"
 	@$(RM) -r obj/
 
 re: fclean all
