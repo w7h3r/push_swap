@@ -34,7 +34,6 @@ int	main(int argc, char **argv)
 	init_stacks(&stack, stack_size(argv));
 	insert_stacks(argc, argv, &stack);
 	is_valid_stack(&stack);
-	index_stack(&stack);
 	print_stack(stack.a, stack.a_size, "A");
 	print_stack(stack.b, stack.b_size, "B");
 	free_stacks(&stack);
