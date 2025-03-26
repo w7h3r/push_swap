@@ -2,11 +2,11 @@ NAME= push_swap
 CC= cc
 CFLAGS= -Wall -Wextra -Werror -g
 LIBFT= lib/libft/libft.a
+PRINTF= lib/ft_printf/libftprintf.a
 SRC= src/main.c \
 	 src/ps_stack_utils.c \
 	 src/ps_utils.c \
 	 src/ps_insert_stacks.c \
-	 src/index_stack.c \
 	 src/ps_op0.c \
 	 src/ps_op1.c \
 	 src/ps_op2.c \
@@ -21,13 +21,17 @@ $(NAME): $(OBJ) $(LIBFT)
 
 $(LIBFT):
 	make -C lib/libft/
+	make -C lib/ft_printf/
 
 clean:
 	rm -rf $(OBJ)
 	make -C lib/libft/ clean
+	make -C lib/ft_printf/ clean
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf $(LIBFT)
+	rm -rf $(PRINTF)
 
 re: fclean all
 
