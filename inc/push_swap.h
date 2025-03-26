@@ -50,6 +50,4 @@ void	rra(t_stacks *stack);
 void	rrb(t_stacks *stack);
 void	rrr(t_stacks *stack);
 
-void	index_stack(t_stacks *stack);
-
 #endif
