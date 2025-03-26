@@ -46,15 +46,15 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
-	@echo "\033[32m✓ built succesfully\033[0m"
+	@echo "\033[32m\n✓ [ LIBFT ] built succesfully\n\033[0m"
 
 clean:
 	@$(RM) $(OBJ)
-	@echo "\033[31m✓ objects removed\033[0m"
+	@echo "\033[31m✓ [ LIBFT ] objects removed\033[0m"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\033[31m✓ library removed\033[0m --> $(NAME)"
+	@echo "\033[31m✓ [ LIBFT ] removed\033[0m --> $(NAME)"
 
 re: fclean all
 
