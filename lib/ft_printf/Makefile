@@ -16,7 +16,7 @@ all: $(NAME)
 
 obj/%.o: src/%.c
 	@mkdir -p obj
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
