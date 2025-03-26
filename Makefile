@@ -30,8 +30,8 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	rm -rf $(LIBFT)
-	rm -rf $(PRINTF)
+	make -C lib/libft/ fclean
+	make -C lib/ft_printf/ fclean
 
 re: fclean all
 
