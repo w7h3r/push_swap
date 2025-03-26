@@ -46,7 +46,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
-	@echo "\033[32m\n✓ [ LIBFT ] built succesfully\n\033[0m"
+	@echo "\033[32m✓ [ LIBFT ] built succesfully\033[0m"
 
 clean:
 	@$(RM) $(OBJ)
