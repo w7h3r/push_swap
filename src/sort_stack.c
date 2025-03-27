@@ -29,33 +29,24 @@ int	find_min(int *arr, int size)
 	return (min);
 }
 
-void	sort_three(t_stacks *stack)
+void	sort_three(t_stacks *arr)
 {
-	int	i;
-	int	j;
-	int	k;
-
-	i = stack->a[0];
-	j = stack->a[1];
-	k = stack->a[2];
-	if (i < j && j < k)
-		return ;
-	else if (i > j && j > k)
+	if (arr->a[0] > arr->a[1] && arr->a[0] > arr->a[2] && arr->a[1] > arr->a[2])
 	{
-		sa(stack);
-		rra(stack);
+		sa(arr);
+		rra(arr);
 	}
-	else if (i > j && i > k && k > j)
-		ra(stack);
-	else if (i < j && i < k && j > k)
+	else if (arr->a[0] > arr->a[1] && arr->a[0] > arr->a[2] && arr->a[1] < arr->a[2])
+		ra(arr);
+	else if (arr->a[0] > arr->a[1] && arr->a[0] < arr->a[2] && arr->a[1] < arr->a[2])
+		sa(arr);
+	else if (arr->a[0] < arr->a[1] && arr->a[0] > arr->a[2] && arr->a[1] > arr->a[2])
+		rra(arr);
+	else if (arr->a[0] < arr->a[1] && arr->a[0] < arr->a[2] && arr->a[1] > arr->a[2])
 	{
-		rra(stack);
-		sa(stack);
+		rra(arr);
+		sa(arr);
 	}
-	else if (i < j && i > k && j > k)
-		rra(stack);
-	else if (i > j && j < k && k > i)
-		sa(stack);
 }
 
 void	pick_sort(t_stacks *stack)
