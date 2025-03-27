@@ -50,4 +50,6 @@ void	rra(t_stacks *stack);
 void	rrb(t_stacks *stack);
 void	rrr(t_stacks *stack);
 
+void	pick_sort(t_stacks *stack);
+
 #endif
