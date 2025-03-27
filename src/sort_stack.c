@@ -31,19 +31,31 @@ int	find_min(int *arr, int size)
 
 void	sort_three(t_stacks *stack)
 {
-	// 1 2 3
-	if (stack->a[0] < stack->a[1] && stack->a[1] < stack->a[2])
+	int	i;
+	int	j;
+	int	k;
+
+	i = stack->a[0];
+	j = stack->a[1];
+	k = stack->a[2];
+	if (i < j && j < k)
 		return ;
-	// 3 2 1
-	else if (stack->a[0] > stack->a[1] && stack->a[1] > stack->a[2])
+	else if (i > j && j > k)
 	{
 		sa(stack);
 		rra(stack);
 	}
-	// 3 1 2
-	else if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2])
+	else if (i > j && i > k && k > j)
 		ra(stack);
-	else if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2])
+	else if (i < j && i < k && j > k)
+	{
+		rra(stack);
+		sa(stack);
+	}
+	else if (i < j && i > k && j > k)
+		rra(stack);
+	else if (i > j && j < k && k > i)
+		sa(stack);
 }
 
 void	pick_sort(t_stacks *stack)
