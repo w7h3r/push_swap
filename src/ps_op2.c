@@ -53,4 +53,3 @@ void	rr(t_stacks *stack)
 	}
 	write(1, "rr\n", 3);
 }
-
