@@ -16,12 +16,14 @@ OBJ= $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) $(CFLAGS) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJ) $(LIBFT) $(PRINTF)
+	$(CC) $(OBJ) $(CFLAGS) $(LIBFT) $(PRINTF) -o $(NAME)
 	@echo "\033[32m✓ [ PUSH_SWAP ] built successfully\033[0m"
 
 $(LIBFT):
 	make -C lib/libft/
+
+$(PRINTF):
 	make -C lib/ft_printf/
 
 clean:
