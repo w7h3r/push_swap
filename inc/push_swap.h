@@ -19,6 +19,9 @@ typedef struct s_stacks
 	int	*b;
 	int	a_size;
 	int	b_size;
+	int	target_a;
+	int	target_b;
+	int	cost;
 }	t_stacks;
 
 void	free_stacks(t_stacks *stack);
@@ -51,5 +54,7 @@ void	rrb(t_stacks *stack);
 void	rrr(t_stacks *stack);
 
 void	pick_sort(t_stacks *stack);
+void	turk_sort(t_stacks *stack);
+void	sort_three(t_stacks *arr);
 
 #endif
