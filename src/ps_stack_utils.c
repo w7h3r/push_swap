@@ -27,7 +27,7 @@ _Bool	stack_repeat(t_stacks *stack)
 		while (j < stack->a_size)
 		{
 			if (stack->a[j] == stack->a[i])
-				return (write(1, "INVALID\n", 8), 1);
+				return (1);
 			j++;
 		}
 		i++;
@@ -48,19 +48,19 @@ int	stack_sorted(t_stacks *stack)
 		}
 		i++;
 	}
-	return (write(1, "SORTED\n", 7), 1);
+	return (1);
 }
 
 void	is_valid_stack(t_stacks *stack)
 {
 	if (stack_repeat(stack))
 	{
-		free_stacks(stack);
+		err_exit(stack, "Error: All arguments must be uniqe integers");
 		exit (1);
 	}
 	if (stack_sorted(stack))
 	{
-		free_stacks(stack);
+		err_exit(stack, "Error: Error: Agruments already sorted");
 		exit (1);
 	}
 }
