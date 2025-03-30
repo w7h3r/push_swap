@@ -11,11 +11,18 @@
 /* ************************************************************************** */
 
 #include "../lib/libft/libft.h"
+#include "../lib/ft_printf/include/ft_printf.h"
 #include "../inc/push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+
+void	err_exit(t_stacks *stack, const char *err_msg)
+{
+	ft_printf("%s\n", err_msg);
+	free_stacks(stack);
+}
 
 void	free_stacks(t_stacks *stack)
 {
@@ -54,11 +61,13 @@ int	insert_atoi(char *str, t_stacks *stacks)
 			sign = -1;
 		str++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*str)
 	{
+		if (!(*str >= '0' && *str <= '9'))
+			err_exit(stacks, "Error: All arguments must be numeric");
 		num = num * 10 + (*str - '0');
 		if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
-			free_stacks(stacks);
+			err_exit(stacks, "Error: All arguments must be at integer range!");
 		str++;
 	}
 	return ((int)num * sign);

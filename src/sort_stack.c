@@ -16,6 +16,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+void	radix_sort(t_stacks *stack);
+
 int	find_min(int *arr, int size)
 {
 	int	i;
