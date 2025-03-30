@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../lib/libft/libft.h"
+#include "../lib/ft_printf/include/ft_printf.h"
 #include "../inc/push_swap.h"
 #include <limits.h>
 #include <stdio.h>
@@ -20,14 +21,21 @@
 void	init_stacks(t_stacks *stacks, int size)
 {
 	if (size < 2)
+	{
+		ft_printf("%s\n", "Error: Insufficient argument count");
 		exit (1);
+	}
 	stacks->a = malloc(sizeof(int) * size);
 	if (!stacks->a)
+	{
+		ft_printf("%s\n", "Error: Malloc failed");
 		exit (1);
+	}
 	stacks->b = malloc(sizeof(int) * size);
 	if (!stacks->b)
 	{
 		free (stacks->a);
+		ft_printf("%s\n", "Error: Malloc failed");
 		exit (1);
 	}
 	stacks->a_size = 0;
