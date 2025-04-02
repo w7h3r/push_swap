@@ -57,6 +57,7 @@ void	radix_sort(t_stacks *stack)
 {
 	bubble_sort_stack(stack);
 	index_stack(stack);
+
 }
 
 void	sort_three(t_stacks *arr)

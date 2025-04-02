@@ -17,10 +17,9 @@ typedef struct s_stacks
 {
 	int	*a;
 	int	*b;
+	int	*idx_a;
 	int	a_size;
 	int	b_size;
-	int	*idx_a;
-
 }	t_stacks;
 
 void	free_stacks(t_stacks *stack);
