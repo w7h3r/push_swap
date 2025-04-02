@@ -14,7 +14,6 @@
 #include "../lib/ft_printf/include/ft_printf.h"
 #include "../inc/push_swap.h"
 #include <limits.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -38,6 +37,7 @@ void	init_stacks(t_stacks *stacks, int size)
 		ft_printf("%s\n", "Error: Malloc failed");
 		exit (1);
 	}
+	stacks->idx_a = malloc(sizeof(int) * size);
 	stacks->a_size = 0;
 	stacks->b_size = 0;
 }
