@@ -13,7 +13,6 @@
 #include "../lib/libft/libft.h"
 #include "../lib/ft_printf/include/ft_printf.h"
 #include "../inc/push_swap.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
