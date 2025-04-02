@@ -41,22 +41,22 @@ void	bubble_sort_stack(t_stacks *stack)
 	}
 }
 
+void	index_stack(t_stacks *stack)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack->a_size)
+	{
+		stack->idx_a[i] = i;
+		i++;
+	}
+}
+
 void	radix_sort(t_stacks *stack)
 {
 	bubble_sort_stack(stack);
-}
-
-int	find_min(int *arr, int size)
-{
-	int	i;
-	int	min;
-
-	min = arr[0];
-	i = -1;
-	while (++i < size)
-		if (min > arr[i])
-			min = arr[i];
-	return (min);
+	index_stack(stack);
 }
 
 void	sort_three(t_stacks *arr)
