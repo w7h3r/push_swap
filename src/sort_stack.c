@@ -16,7 +16,35 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void	radix_sort(t_stacks *stack);
+void	bubble_sort_stack(t_stacks *stack)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < stack->a_size)
+	{
+		stack->idx_a[i] = stack->a[i];
+		i++;
+	}
+	i = 0;
+	while (i < stack->a_size - 1)
+	{
+		j = 0;
+		while (j < stack->a_size - i - 1)
+		{
+			if (stack->idx_a[j] > stack->idx_a[j + 1])
+				swap(&stack->idx_a[j], &stack->idx_a[j + 1]);
+			j++;
+		}
+		i++;
+	}
+}
+
+void	radix_sort(t_stacks *stack)
+{
+	bubble_sort_stack(stack);
+}
 
 int	find_min(int *arr, int size)
 {
@@ -57,4 +85,6 @@ void	pick_sort(t_stacks *stack)
 		sa(stack);
 	else if (stack->a_size == 3)
 		sort_three(stack);
+	else
+		radix_sort(stack);
 }
