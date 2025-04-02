@@ -26,8 +26,12 @@ void	err_exit(t_stacks *stack, const char *err_msg)
 
 void	free_stacks(t_stacks *stack)
 {
-	free(stack->a);
-	free(stack->b);
+	if (stack->a)
+		free(stack->a);
+	if (stack->b)
+		free(stack->b);
+	if (stack->idx_a)
+		free(stack->idx_a);
 	exit (1);
 }
 
