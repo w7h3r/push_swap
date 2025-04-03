@@ -38,7 +38,6 @@ int	main(int argc, char **argv)
 
 	print_stack(stack.a, stack.a_size, "A");
 	print_stack(stack.b, stack.b_size, "B");
-	print_stack(stack.idx_a, stack.a_size, "IDX");
 
 	free_stacks(&stack);
 }

@@ -29,8 +29,6 @@ void	free_stacks(t_stacks *stack)
 		free(stack->a);
 	if (stack->b)
 		free(stack->b);
-	if (stack->idx_a)
-		free(stack->idx_a);
 	exit (1);
 }
 

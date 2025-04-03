@@ -30,9 +30,6 @@ void	init_stacks(t_stacks *stacks, int size)
 	stacks->b = malloc(sizeof(int) * size);
 	if (!stacks->b)
 		err_exit(stacks, "Error: Malloc failed. init_stack(): stacks.b");
-	stacks->idx_a = malloc(sizeof(int) * size);
-	if (!stacks->idx_a)
-		err_exit(stacks, "Error: Malloc failed. init_stack(): idx_a");
 	stacks->a_size = 0;
 	stacks->b_size = 0;
 }

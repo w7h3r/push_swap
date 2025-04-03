@@ -17,7 +17,6 @@ typedef struct s_stacks
 {
 	int	*a;
 	int	*b;
-	int	*idx_a;
 	int	a_size;
 	int	b_size;
 }	t_stacks;

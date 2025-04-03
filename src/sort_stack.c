@@ -13,9 +13,9 @@
 #include "../lib/libft/libft.h"
 #include "../inc/push_swap.h"
 #include <limits.h>
-#include <stdlib.h>
 #include <unistd.h>
 
+/*
 void	bubble_sort_stack(t_stacks *stack)
 {
 	int	i;
@@ -52,11 +52,10 @@ void	index_stack(t_stacks *stack)
 		i++;
 	}
 }
+*/
 
 void	radix_sort(t_stacks *stack)
 {
-	bubble_sort_stack(stack);
-	index_stack(stack);
 
 }
 
