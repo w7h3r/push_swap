@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib/libft/libft.h"
 #include "../inc/push_swap.h"
-#include "../lib/ft_printf/include/ft_printf.h"
 #include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -79,7 +77,6 @@ int	compute_max_bit_count(int *arr, int size)
 			max = arr[i];
 		i++;
 	}
-//	ft_printf("\nMAX INT: %d\n", max);
 	bit_count = 0;
 	while (max >> bit_count)
 		bit_count++;
@@ -95,7 +92,6 @@ void	sort_indexed_stack(t_stacks *stack)
 
 	bit = 0;
 	max_bit = compute_max_bit_count(stack->a, stack->a_size);
-//	ft_printf("MAX BIT: %d\n", max_bit);
 	while (bit < max_bit)
 	{
 		size = stack->a_size;

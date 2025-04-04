@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib/libft/libft.h"
 #include "../inc/push_swap.h"
 #include <unistd.h>
 #include <stdlib.h>
@@ -62,5 +61,17 @@ void	is_valid_stack(t_stacks *stack)
 	{
 		err_exit(stack, "Error: Agruments already sorted");
 		exit (1);
+	}
+}
+
+void	copy_stacks(int *src, int *dst, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		dst[i] = src[i];
+		i++;
 	}
 }

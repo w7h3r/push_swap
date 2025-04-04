@@ -10,23 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib/libft/libft.h"
 #include "../inc/push_swap.h"
 #include <limits.h>
 #include <unistd.h>
-#include <stdlib.h>
-
-void	copy_stacks(int *src, int *dst, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-}
 
 void	sort_three(t_stacks *arr)
 {
@@ -52,12 +38,60 @@ void	sort_three(t_stacks *arr)
 	}
 }
 
+int	find_min_idx(t_stacks *stack)
+{
+	int	min_idx;
+	int	min;
+	int	i;
+
+	min = stack->a[0];
+	min_idx = 0;
+	i = 0;
+	while (i < stack->a_size)
+	{
+		if (stack->a[i] < min)
+		{
+			min = stack->a[i];
+			min_idx = i;
+		}
+		i++;
+	}
+	return (min_idx);
+}
+
+void	min_to_top(t_stacks *stack)
+{
+	int min_idx;
+
+	min_idx = find_min_idx(stack);
+	if (min_idx <= stack->a_size / 2)
+		while (min_idx--)
+			ra(stack);
+	else
+		while (min_idx++ < stack->a_size)
+			rra(stack);
+}
+
+void	sort_less_ten_arg(t_stacks *stack)
+{
+	while (stack->a_size > 3)
+	{
+		min_to_top(stack);
+		pb(stack);
+	}
+	sort_three(stack);
+	while (stack->b_size)
+		pa(stack);
+}
+
 void	pick_sort(t_stacks *stack)
 {
 	if (stack->a_size == 2)
 		sa(stack);
 	else if (stack->a_size == 3)
 		sort_three(stack);
+	else if (stack->a_size >= 4 && stack->a_size < 10)
+		sort_less_ten_arg(stack);
 	else
 		radix_sort(stack);
 }

@@ -99,7 +99,7 @@ int	stack_size(char **arg)
 	{
 		if (arg[i][0] == '\0')
 		{
-			ft_printf("Error: Null-only arguments are invalid\n");
+			ft_printf("Error\n");
 			exit (1);
 		}
 		if (ft_strchr(arg[i], ' '))
