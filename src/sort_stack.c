@@ -61,7 +61,7 @@ int	find_min_idx(t_stacks *stack)
 
 void	min_to_top(t_stacks *stack)
 {
-	int min_idx;
+	int	min_idx;
 
 	min_idx = find_min_idx(stack);
 	if (min_idx <= stack->a_size / 2)

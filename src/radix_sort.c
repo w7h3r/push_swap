@@ -54,7 +54,7 @@ void	index_stack(t_stacks *stack, int *temp_idx)
 			if (stack->a[i] == stack->idx_a[j])
 			{
 				temp_idx[i] = j;
-				break;
+				break ;
 			}
 			j++;
 		}
