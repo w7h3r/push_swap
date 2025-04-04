@@ -6,7 +6,7 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:53:29 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/23 04:25:31 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/04/04 03:10:45 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ void	init_stacks(t_stacks *stacks, int size)
 	stacks->b = malloc(sizeof(int) * size);
 	if (!stacks->b)
 		err_exit(stacks, "Error: Malloc failed. init_stack(): stacks.b");
+	stacks->idx_a = malloc(sizeof(int) * size);
+	if (!stacks->b)
+		err_exit(stacks, "Error: Malloc failed. init_stack(): stacks.idx_a");
 	stacks->a_size = 0;
 	stacks->b_size = 0;
 }
@@ -40,8 +43,6 @@ void	handle_string_arg(char *arg, t_stacks *stack)
 	unsigned int	i;
 
 	split_buffer = ft_split(arg, ' ');
-	if (!split_buffer)
-		exit (1);
 	i = 0;
 	while (split_buffer[i])
 	{
@@ -97,7 +98,10 @@ int	stack_size(char **arg)
 	while (arg[i])
 	{
 		if (arg[i][0] == '\0')
-			exit(1);
+		{
+			ft_printf("Error: Null-only arguments are invalid\n");
+			exit (1);
+		}
 		if (ft_strchr(arg[i], ' '))
 			stack_size += arg_size(arg[i]);
 		else

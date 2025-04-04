@@ -6,7 +6,7 @@
 /*   By: muokcan <muokcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:41:57 by muokcan           #+#    #+#             */
-/*   Updated: 2025/03/25 09:00:55 by muokcan          ###   ########.fr       */
+/*   Updated: 2025/04/03 22:51:58 by muokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ typedef struct s_stacks
 {
 	int	*a;
 	int	*b;
+	int	*idx_a;
 	int	a_size;
 	int	b_size;
 }	t_stacks;
@@ -34,6 +35,7 @@ void	handle_string_arg(char *arg, t_stacks *stack);
 void	insert_stacks(int argc, char **arg, t_stacks *stack);
 int		arg_size(char *arg);
 int		stack_size(char **arg);
+void	copy_stacks(int *src, int *dst, int size);
 
 void	swap(int *first, int *second);
 void	sa(t_stacks *stack);
@@ -53,5 +55,6 @@ void	rrr(t_stacks *stack);
 
 void	pick_sort(t_stacks *stack);
 void	sort_three(t_stacks *arr);
+void	radix_sort(t_stacks *stack);
 
 #endif

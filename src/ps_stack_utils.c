@@ -60,7 +60,7 @@ void	is_valid_stack(t_stacks *stack)
 	}
 	if (stack_sorted(stack))
 	{
-		err_exit(stack, "Error: Error: Agruments already sorted");
+		err_exit(stack, "Error: Agruments already sorted");
 		exit (1);
 	}
 }

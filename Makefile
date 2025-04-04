@@ -12,6 +12,7 @@ SRC= src/main.c \
 	 src/ps_op2.c \
 	 src/ps_op3.c \
 	 src/sort_stack.c \
+	 src/radix_sort.c
 
 OBJ= $(SRC:.c=.o)
 

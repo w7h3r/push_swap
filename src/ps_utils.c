@@ -29,6 +29,8 @@ void	free_stacks(t_stacks *stack)
 		free(stack->a);
 	if (stack->b)
 		free(stack->b);
+	if (stack->idx_a)
+		free(stack->idx_a);
 	exit (1);
 }
 
@@ -67,10 +69,10 @@ int	insert_atoi(char *str, t_stacks *stacks)
 		if (!(*str >= '0' && *str <= '9'))
 			err_exit(stacks, "Error: All arguments must be numeric");
 		num = num * 10 + (*str - '0');
-		if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
-			err_exit(stacks, "Error: All arguments must be at integer range!");
 		str++;
 	}
+	if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
+		err_exit(stacks, "Error: All arguments must be at integer range!");
 	return ((int)num * sign);
 }
 
