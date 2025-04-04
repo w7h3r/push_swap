@@ -21,7 +21,7 @@ void	init_stacks(t_stacks *stacks, int size)
 {
 	if (size < 2)
 	{
-		ft_printf("%s\n", "Error: Insufficient argument count");
+		ft_printf("%s\n", "Error");
 		exit (1);
 	}
 	stacks->a = malloc(sizeof(int) * size);
