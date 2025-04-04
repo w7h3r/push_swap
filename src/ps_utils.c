@@ -19,7 +19,8 @@
 
 void	err_exit(t_stacks *stack, const char *err_msg)
 {
-	ft_printf("%s\n", err_msg);
+	ft_printf("%s\n", "Error");
+	(void)err_msg;
 	free_stacks(stack);
 }
 
