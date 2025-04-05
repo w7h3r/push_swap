@@ -10,24 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../lib/ft_printf/include/ft_printf.h"
 #include "../inc/push_swap.h"
 #include <limits.h>
 #include <stdlib.h>
 #include <unistd.h>
-
-/*
-void	print_stack(int *tab, int size, char *name)
-{
-	ft_printf("STACK %s: \n", name);
-	for (int i = 0; i < size; i++)
-		ft_printf("%d\n", tab[i]);
-	write(1, "\n", 1);
-	print_stack(stack.a, stack.a_size, "A");
-	print_stack(stack.b, stack.b_size, "B");
-	print_stack(stack.idx_a, stack.a_size, "IDX");
-}
-*/
 
 int	main(int argc, char **argv)
 {
