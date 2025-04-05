@@ -19,7 +19,7 @@
 
 void	err_exit(t_stacks *stack, const char *err_msg)
 {
-	ft_printf("%s\n", "Error");
+	ft_printf("Error\n");
 	(void)err_msg;
 	free_stacks(stack);
 }
@@ -53,7 +53,7 @@ void	free_imp(char **str)
 int	insert_atoi(char *str, t_stacks *stacks)
 {
 	long		num;
-	short int	sign;
+	int			sign;
 
 	sign = 1;
 	num = 0;
