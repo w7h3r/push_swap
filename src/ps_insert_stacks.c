@@ -43,6 +43,8 @@ void	handle_string_arg(char *arg, t_stacks *stack)
 	unsigned int	i;
 
 	split_buffer = ft_split(arg, ' ');
+	if (!split_buffer)
+		err_exit(stack, "Error");
 	i = 0;
 	while (split_buffer[i])
 	{
