@@ -14,7 +14,6 @@
 #include "../lib/ft_printf/include/ft_printf.h"
 #include "../inc/push_swap.h"
 #include <stdlib.h>
-#include <unistd.h>
 #include <limits.h>
 
 void	err_exit(t_stacks *stack, const char *err_msg)

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-#include <limits.h>
 #include <stdlib.h>
 #include <unistd.h>
 

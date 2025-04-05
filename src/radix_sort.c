@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-#include <limits.h>
-#include <unistd.h>
 #include <stdlib.h>
 
 void	bubble_sort_stack(t_stacks *stack)

@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-#include <limits.h>
-#include <unistd.h>
 
 void	sort_three(t_stacks *arr)
 {
