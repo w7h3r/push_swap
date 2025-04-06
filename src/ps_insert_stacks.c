@@ -18,11 +18,6 @@
 
 void	init_stacks(t_stacks *stacks, int size)
 {
-	if (size < 2)
-	{
-		ft_printf("%s\n", "Error");
-		exit (1);
-	}
 	stacks->a = malloc(sizeof(int) * size);
 	if (!stacks->a)
 		err_exit(stacks, "Error: Malloc failed. init_stack(): stacks.a");

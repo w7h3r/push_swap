@@ -24,5 +24,5 @@ int	main(int argc, char **argv)
 	insert_stacks(argc, argv, &stack);
 	is_valid_stack(&stack);
 	pick_sort(&stack);
-	free_stacks(&stack);
+	free_stacks(&stack, 0);
 }

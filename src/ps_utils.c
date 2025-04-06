@@ -20,10 +20,10 @@ void	err_exit(t_stacks *stack, const char *err_msg)
 {
 	ft_printf("Error\n");
 	(void)err_msg;
-	free_stacks(stack);
+	free_stacks(stack, 1);
 }
 
-void	free_stacks(t_stacks *stack)
+void	free_stacks(t_stacks *stack, int con)
 {
 	if (stack->a)
 		free(stack->a);
@@ -31,7 +31,7 @@ void	free_stacks(t_stacks *stack)
 		free(stack->b);
 	if (stack->idx_a)
 		free(stack->idx_a);
-	exit (1);
+	exit(con);
 }
 
 void	free_imp(char **str)
