@@ -40,10 +40,7 @@ void	push_to_stack(int *src, int *dst, int *src_size, int *dst_size)
 void	pa(t_stacks *stack)
 {
 	if (stack->b_size == 0)
-	{
-		free_stacks(stack, 1);
-		exit (1);
-	}
+		return ;
 	push_to_stack(stack->b, stack->a, &stack->b_size, &stack->a_size);
 	write(1, "pa\n", 3);
 }
@@ -51,10 +48,7 @@ void	pa(t_stacks *stack)
 void	pb(t_stacks *stack)
 {
 	if (stack->a_size == 0)
-	{
-		free_stacks(stack, 1);
-		exit (1);
-	}
+		return ;
 	push_to_stack(stack->a, stack->b, &stack->a_size, &stack->b_size);
 	write(1, "pb\n", 3);
 }

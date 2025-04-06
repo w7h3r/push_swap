@@ -15,18 +15,24 @@
 
 void	sa(t_stacks *stack)
 {
+	if (stack->a_size < 2)
+		return ;
 	swap(&stack->a[0], &stack->a[1]);
 	write(1, "sa\n", 3);
 }
 
 void	sb(t_stacks *stack)
 {
+	if (stack->b_size < 2)
+		return ;
 	swap(&stack->b[0], &stack->b[1]);
 	write(1, "sb\n", 3);
 }
 
 void	ss(t_stacks *stack)
 {
+	if (stack->b_size < 2 && stack->a_size < 2)
+		return ;
 	swap(&stack->a[0], &stack->a[1]);
 	swap(&stack->b[0], &stack->b[1]);
 	write(1, "ss\n", 3);

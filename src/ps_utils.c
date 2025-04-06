@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "../lib/libft/libft.h"
-#include "../lib/ft_printf/include/ft_printf.h"
 #include "../inc/push_swap.h"
 #include <stdlib.h>
+#include <unistd.h>
 #include <limits.h>
 
 void	err_exit(t_stacks *stack, const char *err_msg)
 {
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	(void)err_msg;
 	free_stacks(stack, 1);
 }
@@ -64,6 +64,12 @@ int	insert_atoi(char *str, t_stacks *stacks)
 			sign = -1;
 		str++;
 	}
+	if (ft_strlen(str) == 0)
+		err_exit(stacks, "Error: Must be a number after sign");
+	while (*str == '0')
+		str++;
+	if (ft_strlen(str) > 11)
+		err_exit(stacks, "Error: All numbers must be at integer range");
 	while (*str)
 	{
 		if (!(*str >= '0' && *str <= '9'))

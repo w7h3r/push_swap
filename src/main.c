@@ -13,6 +13,15 @@
 #include "../inc/push_swap.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
+
+void	print_stack(int *tab, int size, char *name)
+ {
+ 	printf("STACK %s: \n", name);
+ 	for (int i = 0; i < size; i++)
+ 		printf("%d\n", tab[i]);
+ 	write(1, "\n", 1);
+ }
 
 int	main(int argc, char **argv)
 {
@@ -24,5 +33,8 @@ int	main(int argc, char **argv)
 	insert_stacks(argc, argv, &stack);
 	is_valid_stack(&stack);
 	pick_sort(&stack);
+ 	//print_stack(stack.a, stack.a_size, "A");
+ 	//print_stack(stack.b, stack.b_size, "B");
+ 	//print_stack(stack.idx_a, stack.a_size, "IDX");
 	free_stacks(&stack, 0);
 }

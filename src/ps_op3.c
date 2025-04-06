@@ -32,24 +32,25 @@ void	rev_rotate_stack(int *stack, int *size)
 
 void	rra(t_stacks *stack)
 {
-	if (stack->a[0])
-		rev_rotate_stack(stack->a, &stack->a_size);
+	if (stack->a_size < 2)
+		return ;
+	rev_rotate_stack(stack->a, &stack->a_size);
 	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stacks *stack)
 {
-	if (stack->b[0])
-		rev_rotate_stack(stack->b, &stack->b_size);
+	if (stack->b_size < 2)
+		return ;
+	rev_rotate_stack(stack->b, &stack->b_size);
 	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stacks *stack)
 {
-	if (stack->a[0] && stack->b[0])
-	{
-		rev_rotate_stack(stack->a, &stack->a_size);
-		rev_rotate_stack(stack->b, &stack->b_size);
-	}
+	if (stack->a_size && stack->b_size)
+		return ;
+	rev_rotate_stack(stack->a, &stack->a_size);
+	rev_rotate_stack(stack->b, &stack->b_size);
 	write(1, "rrr\n", 4);
 }

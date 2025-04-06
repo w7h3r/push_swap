@@ -95,7 +95,7 @@ int	stack_size(char **arg)
 	{
 		if (arg[i][0] == '\0')
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			exit (1);
 		}
 		if (ft_strchr(arg[i], ' '))

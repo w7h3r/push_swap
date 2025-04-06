@@ -11,9 +11,12 @@
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+#include "../lib/ft_printf/include/ft_printf.h"
 
 void	sort_three(t_stacks *arr)
 {
+	if (arr->a[0] < arr->a[1] && arr->a[1] < arr->a[2])
+		return ;
 	if (arr->a[0] > arr->a[1] && arr->a[0] > arr->a[2] && arr->a[1] > arr->a[2])
 	{
 		sa(arr);
