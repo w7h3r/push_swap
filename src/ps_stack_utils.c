@@ -11,8 +11,18 @@
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-#include <unistd.h>
 #include <stdlib.h>
+
+void	free_stacks(t_stacks *stack, int con)
+{
+	if (stack->a)
+		free(stack->a);
+	if (stack->b)
+		free(stack->b);
+	if (stack->idx_a)
+		free(stack->idx_a);
+	exit(con);
+}
 
 _Bool	stack_repeat(t_stacks *stack)
 {

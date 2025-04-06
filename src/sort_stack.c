@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-#include "../lib/ft_printf/include/ft_printf.h"
 
 void	sort_three(t_stacks *arr)
 {

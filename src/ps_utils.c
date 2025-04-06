@@ -23,17 +23,6 @@ void	err_exit(t_stacks *stack, const char *err_msg)
 	free_stacks(stack, 1);
 }
 
-void	free_stacks(t_stacks *stack, int con)
-{
-	if (stack->a)
-		free(stack->a);
-	if (stack->b)
-		free(stack->b);
-	if (stack->idx_a)
-		free(stack->idx_a);
-	exit(con);
-}
-
 void	free_imp(char **str)
 {
 	int	i;
@@ -47,6 +36,21 @@ void	free_imp(char **str)
 		i++;
 	}
 	free(str);
+}
+
+static long	atoi_convert_helper(char *str, t_stacks *stacks)
+{
+	long	num;
+
+	num = 0;
+	while (*str)
+	{
+		if (!(*str >= '0' && *str <= '9'))
+			err_exit(stacks, "Error: All arguments must be numeric");
+		num = num * 10 + (*str - '0');
+		str++;
+	}
+	return (num);
 }
 
 int	insert_atoi(char *str, t_stacks *stacks)
@@ -70,13 +74,7 @@ int	insert_atoi(char *str, t_stacks *stacks)
 		str++;
 	if (ft_strlen(str) > 11)
 		err_exit(stacks, "Error: All numbers must be at integer range");
-	while (*str)
-	{
-		if (!(*str >= '0' && *str <= '9'))
-			err_exit(stacks, "Error: All arguments must be numeric");
-		num = num * 10 + (*str - '0');
-		str++;
-	}
+	num = atoi_convert_helper(str, stacks);
 	if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
 		err_exit(stacks, "Error: All arguments must be at integer range!");
 	return ((int)num * sign);
