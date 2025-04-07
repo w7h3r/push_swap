@@ -16,10 +16,9 @@
 #include <unistd.h>
 #include <limits.h>
 
-void	err_exit(t_stacks *stack, const char *err_msg)
+void	err_exit(t_stacks *stack)
 {
 	write(2, "Error\n", 6);
-	(void)err_msg;
 	free_stacks(stack, 1);
 }
 
@@ -46,7 +45,7 @@ static long	atoi_convert_helper(char *str, t_stacks *stacks)
 	while (*str)
 	{
 		if (!(*str >= '0' && *str <= '9'))
-			err_exit(stacks, "Error: All arguments must be numeric");
+			err_exit(stacks);
 		num = num * 10 + (*str - '0');
 		str++;
 	}
@@ -69,14 +68,14 @@ int	insert_atoi(char *str, t_stacks *stacks)
 		str++;
 	}
 	if (ft_strlen(str) == 0)
-		err_exit(stacks, "Error: Must be a number after sign");
+		err_exit(stacks);
 	while (*str == '0')
 		str++;
 	if (ft_strlen(str) > 11)
-		err_exit(stacks, "Error: All numbers must be at integer range");
+		err_exit(stacks);
 	num = atoi_convert_helper(str, stacks);
 	if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
-		err_exit(stacks, "Error: All arguments must be at integer range!");
+		err_exit(stacks);
 	return ((int)num * sign);
 }
 

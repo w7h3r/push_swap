@@ -115,7 +115,7 @@ void	radix_sort(t_stacks *stack)
 	bubble_sort_stack(stack);
 	temp_idx = malloc(sizeof(int) * stack->a_size);
 	if (!temp_idx)
-		err_exit(stack, "Error: Malloc failed: radix_sort()");
+		err_exit(stack);
 	index_stack(stack, temp_idx);
 	free (temp_idx);
 	sort_indexed_stack(stack);

@@ -19,13 +19,13 @@ void	init_stacks(t_stacks *stacks, int size)
 {
 	stacks->a = malloc(sizeof(int) * size);
 	if (!stacks->a)
-		err_exit(stacks, "Error: Malloc failed. init_stack(): stacks.a");
+		err_exit(stacks);
 	stacks->b = malloc(sizeof(int) * size);
 	if (!stacks->b)
-		err_exit(stacks, "Error: Malloc failed. init_stack(): stacks.b");
+		err_exit(stacks);
 	stacks->idx_a = malloc(sizeof(int) * size);
-	if (!stacks->b)
-		err_exit(stacks, "Error: Malloc failed. init_stack(): stacks.idx_a");
+	if (!stacks->idx_a)
+		err_exit(stacks);
 	stacks->a_size = 0;
 	stacks->b_size = 0;
 }
@@ -39,10 +39,10 @@ void	handle_string_arg(char *arg, t_stacks *stack)
 	while (arg[i] == ' ')
 		i++;
 	if (!arg[i])
-		err_exit(stack, "Error");
+		err_exit(stack);
 	split_buffer = ft_split(arg, ' ');
 	if (!split_buffer)
-		err_exit(stack, "Error");
+		err_exit(stack);
 	i = 0;
 	while (split_buffer[i])
 	{
@@ -82,13 +82,22 @@ int	arg_size(char *arg)
 	while (arg[i] == ' ')
 		i++;
 	if (!arg[i])
-		exit (1);
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	split_buffer = ft_split(arg, ' ');
 	if (!split_buffer)
 		exit(1);
+	i = 0;
 	while (split_buffer[i])
 		i++;
 	free_imp(split_buffer);
+	if (i == 0)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	return (i);
 }
 

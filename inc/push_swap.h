@@ -28,7 +28,7 @@ int		insert_atoi(char *str, t_stacks *stacks);
 _Bool	stack_repeat(t_stacks *stack);
 int		stack_sorted(t_stacks *stack);
 void	is_valid_stack(t_stacks *stack);
-void	err_exit(t_stacks *stack, const char *err_msg);
+void	err_exit(t_stacks *stack);
 
 void	init_stacks(t_stacks *stacks, int size);
 void	handle_string_arg(char *arg, t_stacks *stack);
