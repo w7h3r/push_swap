@@ -63,15 +63,9 @@ int	stack_sorted(t_stacks *stack)
 void	is_valid_stack(t_stacks *stack)
 {
 	if (stack_repeat(stack))
-	{
 		err_exit(stack, "Error: All arguments must be uniqe integers");
-		exit (1);
-	}
 	if (stack_sorted(stack))
-	{
-		free_stacks(stack, 1);
-		exit (1);
-	}
+		free_stacks(stack, 0);
 }
 
 void	copy_stacks(int *src, int *dst, int size)

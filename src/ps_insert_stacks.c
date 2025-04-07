@@ -35,6 +35,11 @@ void	handle_string_arg(char *arg, t_stacks *stack)
 	char			**split_buffer;
 	unsigned int	i;
 
+	i = 0;
+	while (arg[i] == ' ')
+		i++;
+	if (!arg[i])
+		err_exit(stack, "Error");
 	split_buffer = ft_split(arg, ' ');
 	if (!split_buffer)
 		err_exit(stack, "Error");
@@ -74,6 +79,10 @@ int	arg_size(char *arg)
 	int		i;
 
 	i = 0;
+	while (arg[i] == ' ')
+		i++;
+	if (!arg[i])
+		exit (1);
 	split_buffer = ft_split(arg, ' ');
 	if (!split_buffer)
 		exit(1);
