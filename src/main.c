@@ -13,6 +13,21 @@
 #include "../inc/push_swap.h"
 #include <stdlib.h>
 
+void	free_imp(char **str)
+{
+	int	i;
+
+	if (!*str)
+		return ;
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stacks	stack;

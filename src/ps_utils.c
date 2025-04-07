@@ -22,22 +22,14 @@ void	err_exit(t_stacks *stack)
 	free_stacks(stack, 1);
 }
 
-void	free_imp(char **str)
+void	safe_exit(t_stacks *stack, char **buffer)
 {
-	int	i;
-
-	if (!*str)
-		return ;
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
+	if (buffer)
+		free_imp(buffer);
+	err_exit(stack);
 }
 
-static long	atoi_convert_helper(char *str, t_stacks *stacks)
+static long	atoi_convert_helper(char **buffer, char *str, t_stacks *stacks)
 {
 	long	num;
 
@@ -45,14 +37,14 @@ static long	atoi_convert_helper(char *str, t_stacks *stacks)
 	while (*str)
 	{
 		if (!(*str >= '0' && *str <= '9'))
-			err_exit(stacks);
+			safe_exit(stacks, buffer);
 		num = num * 10 + (*str - '0');
 		str++;
 	}
 	return (num);
 }
 
-int	insert_atoi(char *str, t_stacks *stacks)
+int	insert_atoi(char **buffer, char *str, t_stacks *stacks)
 {
 	long		num;
 	int			sign;
@@ -68,12 +60,12 @@ int	insert_atoi(char *str, t_stacks *stacks)
 		str++;
 	}
 	if (ft_strlen(str) == 0)
-		err_exit(stacks);
+		safe_exit(stacks, buffer);
 	while (*str == '0')
 		str++;
 	if (ft_strlen(str) > 11)
-		err_exit(stacks);
-	num = atoi_convert_helper(str, stacks);
+		safe_exit(stacks, buffer);
+	num = atoi_convert_helper(buffer, str, stacks);
 	if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
 		err_exit(stacks);
 	return ((int)num * sign);

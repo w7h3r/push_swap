@@ -32,7 +32,7 @@ void	init_stacks(t_stacks *stacks, int size)
 
 void	handle_string_arg(char *arg, t_stacks *stack)
 {
-	char			**split_buffer;
+	char			**buffer;
 	unsigned int	i;
 
 	i = 0;
@@ -40,17 +40,17 @@ void	handle_string_arg(char *arg, t_stacks *stack)
 		i++;
 	if (!arg[i])
 		err_exit(stack);
-	split_buffer = ft_split(arg, ' ');
-	if (!split_buffer)
+	buffer = ft_split(arg, ' ');
+	if (!buffer)
 		err_exit(stack);
 	i = 0;
-	while (split_buffer[i])
+	while (buffer[i])
 	{
-		stack->a[stack->a_size] = insert_atoi(split_buffer[i], stack);
+		stack->a[stack->a_size] = insert_atoi(buffer, buffer[i], stack);
 		stack->a_size++;
 		i++;
 	}
-	free_imp(split_buffer);
+	free_imp(buffer);
 }
 
 void	insert_stacks(int argc, char **arg, t_stacks *stack)
@@ -66,7 +66,7 @@ void	insert_stacks(int argc, char **arg, t_stacks *stack)
 		}
 		else
 		{
-			stack->a[stack->a_size] = insert_atoi(arg[i], stack);
+			stack->a[stack->a_size] = insert_atoi(NULL, arg[i], stack);
 			stack->a_size++;
 		}
 		i++;

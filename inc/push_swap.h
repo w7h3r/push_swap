@@ -24,7 +24,7 @@ typedef struct s_stacks
 
 void	free_stacks(t_stacks *stack, int con);
 void	free_imp(char **str);
-int		insert_atoi(char *str, t_stacks *stacks);
+int		insert_atoi(char **buffer, char *str, t_stacks *stacks);
 _Bool	stack_repeat(t_stacks *stack);
 int		stack_sorted(t_stacks *stack);
 void	is_valid_stack(t_stacks *stack);
